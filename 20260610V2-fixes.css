@@ -1,0 +1,115 @@
+/* Mobile sticky menu refresh */
+@media (max-width: 768px) {
+  .jc-sticky-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    width: calc(100% - 18px);
+    margin: 8px auto 0;
+    padding: 9px;
+    border: 1px solid rgba(23, 56, 42, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 28px rgba(23, 56, 42, 0.14);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .jc-sticky-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .jc-menu-link {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: #f47c20;
+    color: #fff;
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .jc-menu-link:hover,
+  .jc-menu-link:focus {
+    background: #d96712;
+    transform: none;
+  }
+
+  .jc-sticky-menu.is-menu-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-140%);
+  }
+}
+
+/* Mobile modal title: keep it properly left-aligned and away from the close button */
+@media (max-width: 768px) {
+  .modal-content h2 {
+    width: auto;
+    margin: 58px 62px 16px 26px;
+    padding: 0;
+    text-align: left;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .modal-content h2::after {
+    margin-top: 14px;
+    margin-left: 0;
+  }
+
+  #modal-text {
+    margin-right: 26px;
+    margin-left: 26px;
+  }
+}
+
+/* Mobile height rows: bring back orange/green icon colours */
+@media (max-width: 768px) {
+  .access-icon--guided .access-symbol,
+  .modal-rules .access-icon--guided .access-symbol {
+    color: var(--jc-accent-dark);
+  }
+
+  .access-icon--solo .access-symbol,
+  .modal-rules .access-icon--solo .access-symbol {
+    color: var(--jc-green);
+  }
+
+  .access-icon--guided .access-value,
+  .modal-rules .access-icon--guided .access-value {
+    color: var(--jc-accent-dark);
+  }
+
+  .access-icon--solo .access-value,
+  .modal-rules .access-icon--solo .access-value {
+    color: var(--jc-green);
+  }
+}
+
+/* Mobile card search icon: keep it simple */
+@media (max-width: 768px) {
+  .click-icon {
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    color: var(--jc-green-dark);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 18px rgba(23, 56, 42, 0.18);
+  }
+
+  .click-icon .access-symbol,
+  .click-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
