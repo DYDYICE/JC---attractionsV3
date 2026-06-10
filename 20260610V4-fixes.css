@@ -1,0 +1,190 @@
+Of course. Replace the whole fixes file with this one.
+
+Use:
+
+```html
+<link href="https://cdn.jsdelivr.net/gh/DYDYICE/JC---attractionsV3@main/20260610V6.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/DYDYICE/JC---attractionsV3@main/20260610V9-fixes.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/gh/DYDYICE/JC---attractionsV3@main/20260610V5.js"></script>
+```
+
+**20260610V9-fixes.css**
+```css
+/* MOBILE MENU: 2 rows, all options visible, no extra shadow layer */
+@media (max-width: 768px) {
+  .jc-sticky-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: calc(100% - 22px);
+    max-width: 430px;
+    margin: 8px auto 0;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    white-space: normal;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .jc-menu-link {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 7px;
+    border-radius: 999px;
+    background: #f47c20;
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(217, 92, 12, 0.25);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.08;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .jc-menu-link:hover,
+  .jc-menu-link:focus {
+    background: #d96712;
+    transform: none;
+  }
+
+  .jc-sticky-menu.is-menu-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-135%);
+  }
+}
+
+/* MOBILE MODAL TITLE: consistent left alignment */
+@media (max-width: 768px) {
+  .modal-content h2 {
+    display: block;
+    width: auto;
+    margin: 58px 64px 16px 26px;
+    padding: 0;
+    text-align: left !important;
+    align-self: auto;
+    justify-self: auto;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .modal-content h2::after {
+    margin-top: 14px;
+    margin-left: 0;
+  }
+
+  #modal-text {
+    margin-right: 26px;
+    margin-left: 26px;
+  }
+}
+
+/* MOBILE HEIGHT ROW COLOURS */
+@media (max-width: 768px) {
+  .access-icon--guided .access-symbol,
+  .modal-rules .access-icon--guided .access-symbol,
+  .access-icon--guided .access-value,
+  .modal-rules .access-icon--guided .access-value {
+    color: var(--jc-accent-dark);
+  }
+
+  .access-icon--solo .access-symbol,
+  .modal-rules .access-icon--solo .access-symbol,
+  .access-icon--solo .access-value,
+  .modal-rules .access-icon--solo .access-value {
+    color: var(--jc-green);
+  }
+}
+
+/* MOBILE SEARCH ICON: small and simple */
+@media (max-width: 768px) {
+  .click-icon {
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    color: var(--jc-green-dark);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 18px rgba(23, 56, 42, 0.18);
+  }
+
+  .click-icon .access-symbol,
+  .click-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* BACK TO TOP BUTTON: simple green with subtle fade */
+#scrollToTopBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #2e7d32;
+  color: transparent;
+  font-size: 0;
+  box-shadow: 0 10px 24px rgba(46, 125, 50, 0.28);
+  isolation: isolate;
+  overflow: hidden;
+  animation: jcTopButtonFade 10s ease-in-out infinite;
+}
+
+#scrollToTopBtn::before {
+  display: none;
+}
+
+#scrollToTopBtn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  width: 18px;
+  height: 18px;
+  border-top: 7px solid #fff;
+  border-left: 7px solid #fff;
+  transform: translate(-50%, -35%) rotate(45deg);
+}
+
+#scrollToTopBtn:hover {
+  filter: brightness(1.04);
+}
+
+@keyframes jcTopButtonFade {
+  0%,
+  72%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  82% {
+    opacity: 0.72;
+    transform: scale(1.04);
+  }
+
+  92% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+
+  #scrollToTopBtn::after {
+    width: 17px;
+    height: 17px;
+    border-top-width: 7px;
+    border-left-width: 7px;
+  }
+}
+```
