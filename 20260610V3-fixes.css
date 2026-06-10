@@ -1,0 +1,193 @@
+/* MOBILE MENU: 2 rows, 6 options visible */
+@media (max-width: 768px) {
+  .jc-sticky-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: calc(100% - 22px);
+    max-width: 430px;
+    margin: 8px auto 0;
+    padding: 10px;
+    border: 1px solid rgba(23, 56, 42, 0.1);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 28px rgba(23, 56, 42, 0.14);
+    overflow: visible;
+    white-space: normal;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .jc-menu-link {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 7px;
+    border-radius: 999px;
+    background: #f47c20;
+    color: #fff;
+    box-shadow: 0 5px 0 rgba(217, 92, 12, 0.28);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.08;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .jc-menu-link:hover,
+  .jc-menu-link:focus {
+    background: #d96712;
+    transform: none;
+  }
+
+  .jc-sticky-menu.is-menu-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-135%);
+  }
+}
+
+/* MOBILE MODAL TITLE: always left aligned */
+@media (max-width: 768px) {
+  .modal-content h2 {
+    display: block;
+    width: auto;
+    margin: 58px 64px 16px 26px;
+    padding: 0;
+    text-align: left !important;
+    align-self: auto;
+    justify-self: auto;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .modal-content h2::after {
+    margin-top: 14px;
+    margin-left: 0;
+  }
+
+  #modal-text {
+    margin-right: 26px;
+    margin-left: 26px;
+  }
+}
+
+/* MOBILE ICON COLOURS */
+@media (max-width: 768px) {
+  .access-icon--guided .access-symbol,
+  .modal-rules .access-icon--guided .access-symbol,
+  .access-icon--guided .access-value,
+  .modal-rules .access-icon--guided .access-value {
+    color: var(--jc-accent-dark);
+  }
+
+  .access-icon--solo .access-symbol,
+  .modal-rules .access-icon--solo .access-symbol,
+  .access-icon--solo .access-value,
+  .modal-rules .access-icon--solo .access-value {
+    color: var(--jc-green);
+  }
+}
+
+/* MOBILE SEARCH ICON: small/simple again */
+@media (max-width: 768px) {
+  .click-icon {
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    color: var(--jc-green-dark);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 18px rgba(23, 56, 42, 0.18);
+  }
+
+  .click-icon .access-symbol,
+  .click-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* BACK TO TOP BUTTON: blue circle with pale top glow */
+#scrollToTopBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #126483;
+  color: transparent;
+  font-size: 0;
+  box-shadow: 0 12px 28px rgba(18, 100, 131, 0.28);
+  isolation: isolate;
+  overflow: visible;
+}
+
+#scrollToTopBtn::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  z-index: -1;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 300deg,
+    transparent 0deg,
+    transparent 245deg,
+    #d8f2ff 245deg,
+    #d8f2ff 355deg,
+    transparent 355deg
+  );
+  opacity: 0.95;
+  animation: jcTopGlow 10s ease-in-out infinite;
+}
+
+#scrollToTopBtn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 18px;
+  height: 18px;
+  border-top: 7px solid #fff;
+  border-left: 7px solid #fff;
+  transform: translate(-50%, -35%) rotate(45deg);
+}
+
+#scrollToTopBtn:hover {
+  filter: brightness(1.04);
+}
+
+@keyframes jcTopGlow {
+  0%,
+  72%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(216, 242, 255, 0));
+  }
+
+  82% {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px rgba(216, 242, 255, 0.8));
+  }
+
+  92% {
+    opacity: 0.9;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(216, 242, 255, 0));
+  }
+}
+
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+
+  #scrollToTopBtn::after {
+    width: 17px;
+    height: 17px;
+    border-top-width: 7px;
+    border-left-width: 7px;
+  }
+}
